@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="saveSong()">
+    <label for="artist">Artist:</label><br>
+    <input type="text" name="artist" formControlName="artist"><br>
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" formControlName="title"><br>
+    <label for="year">Year:</label><br>
+    <input type="text" name="year" formControlName="year"><br><br>
+    <span>
+        <button type="button" (click)="cancelForm()">Cancel</button>
+        <button type="submit" style="background-color:green" [disabled]="!enableSubmit">Submit</button>
+    </span>
+</form>

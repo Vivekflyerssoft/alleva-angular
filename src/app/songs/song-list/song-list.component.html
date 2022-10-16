@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>#</th>
+        <th>Artist</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let song of songs; index as i;">
+        <th>{{i + 1}}</th>
+        <td>{{song.artist}}</td>
+        <td>{{song.title}}</td>
+        <td>{{song.year}}</td>
+        <td>
+            <button (click)="remove(song)">remove</button>
+            <button style="background-color: yellow;" (click)="showUpdate(song)">update</button>
+        </td>
+    </tr>
+</table>

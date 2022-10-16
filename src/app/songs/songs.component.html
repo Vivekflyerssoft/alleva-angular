@@ -1,0 +1,13 @@
+<div>
+
+    <h2 style="text-align:center">Alleva Playlist</h2>
+    <button class="create-btn" *ngIf="!isCreate && !isUpdate" (click)="showCreateSong()">Create</button>
+
+    <app-song-list *ngIf="!isCreate && !isUpdate" [songs]="songs" (removeSong)="removeSong($event)"
+        (showUpdateSong)="showUpdateSong($event)"></app-song-list>
+
+    <div *ngIf="isCreate || isUpdate">
+        <app-song-upsert (cancel)="closeUpsert()" (update)="saveForm($event)" [song]="song"></app-song-upsert>
+    </div>
+
+</div>
