@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <label for="year">Year:</label><br>
-        <input class="form-control" type="text" name="year" formControlName="year">
+        <input class="form-control" type="number" name="year" formControlName="year">
         <span class="text-danger" *ngIf="form.get('year')?.touched && form.get('year')?.errors">
             Year is required (1900 - current year)
         </span>
