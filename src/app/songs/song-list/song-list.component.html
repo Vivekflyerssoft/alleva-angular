@@ -11,9 +11,11 @@
         <td>{{song.artist}}</td>
         <td>{{song.title}}</td>
         <td>{{song.year}}</td>
-        <td>
-            <button (click)="remove(song)">remove</button>
-            <button style="background-color: yellow;" (click)="showUpdate(song)">update</button>
+        <td class="row">
+            <button class="col-md-5 btn btn-danger btn-sm" (click)="remove(song)">REMOVE</button>
+            <div class="col-md-1"></div>
+            <button class="col-md-5 btn btn-info btn-sm" style="background-color: yellow;"
+                (click)="showUpdate(song)">UPDATE</button>
         </td>
     </tr>
 </table>
