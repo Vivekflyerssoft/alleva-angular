@@ -15,13 +15,12 @@ describe('SongUpsertComponent', () => {
       imports: [ReactiveFormsModule, FormsModule],
     })
       .compileComponents();
-    //fbStub.group.and.returnValue(new FormGroup([]));
     fixture = TestBed.createComponent(SongUpsertComponent);
     component = fixture.componentInstance;
     component.song = {
       id: "1",
       artist: 'test artist',
-      year: "2020",
+      year: 2020,
       title: 'test title'
     }
     fixture.detectChanges();

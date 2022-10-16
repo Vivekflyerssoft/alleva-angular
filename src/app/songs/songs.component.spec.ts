@@ -23,7 +23,7 @@ describe('SongsComponent', () => {
       id: "1",
       title: "1904",
       artist: "The Tallest Man on Earth",
-      year: "2012"
+      year: 2012
     }];
     songServiceStub.get$.and.returnValue(of(songs));
     fixture = TestBed.createComponent(SongsComponent);
@@ -39,7 +39,7 @@ describe('SongsComponent', () => {
     const mockSong: SongModel = {
       id: "1",
       artist: 'test artist',
-      year: "2020",
+      year: 2020,
       title: 'test title'
     }
     it('should delete song', () => {

@@ -59,6 +59,7 @@ export class SongsComponent implements OnInit {
 
   private resetSong() {
     this.song = {
+      id: '',
       artist: '',
       title: '',
       year: undefined
