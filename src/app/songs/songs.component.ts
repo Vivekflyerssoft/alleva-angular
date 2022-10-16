@@ -61,7 +61,7 @@ export class SongsComponent implements OnInit {
     this.song = {
       artist: '',
       title: '',
-      year: ''
+      year: undefined
     };
   }
 }

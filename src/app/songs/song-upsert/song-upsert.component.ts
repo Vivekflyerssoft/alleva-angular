@@ -13,7 +13,7 @@ export class SongUpsertComponent implements OnInit {
       id: [value.id],
       title: [value.title, Validators.required],
       artist: [value.artist, Validators.required],
-      year: [value.year, Validators.required]
+      year: [value.year, [Validators.required, Validators.min(1900), Validators.max(new Date().getFullYear())]]
     })
   }
   @Output() cancel = new EventEmitter();
