@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { SongModel } from './models/song';
-import { SongsStateService } from './songs-state.service';
+import { SongModel } from '../../models/song';
+import { SongsStateService } from '../../state/songs-state.service';
 
 
 @Component({
-  selector: 'app-songs',
-  templateUrl: './songs.component.html',
-  styleUrls: ['./songs.component.scss']
+  selector: 'app-songs-layout',
+  templateUrl: './songs-layout.component.html',
+  styleUrls: ['./songs-layout.component.scss']
 })
-export class SongsComponent implements OnInit {
+export class SongsLayoutComponent implements OnInit {
   songs: SongModel[] = [];
   song!: SongModel;
   isCreate: boolean = false;
   isUpdate: boolean = false;
 
-  constructor(private songsService: SongsStateService) {
+  constructor(private songsStateService: SongsStateService) {
   }
 
   ngOnInit(): void {
-    this.songsService.get$().subscribe(songs => {
+    this.songsStateService.get$().subscribe(songs => {
       this.songs = songs
     });
   }
@@ -31,17 +31,17 @@ export class SongsComponent implements OnInit {
 
   saveForm(song: SongModel) {
     if (song.id) {
-      this.songsService.update(song)
+      this.songsStateService.update(song)
       alert('Song updated.')
     } else {
-      this.songsService.create(song)
+      this.songsStateService.create(song)
       alert('Song created.')
     }
     this.closeUpsert();
   }
 
   removeSong(song: SongModel) {
-    this.songsService.delete(song);
+    this.songsStateService.delete(song);
     alert('Song removed.');
   }
 

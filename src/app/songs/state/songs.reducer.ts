@@ -194,7 +194,7 @@ export const initialState: SongModel[] = [
 export const songsReducer = createReducer(
     initialState,
     on(create, (state, action) => {
-        return [...state, { ...action, id: Math.max(...state.map(x => +x.id)).toString() }]
+        return [...state, { ...action, id: (Math.max(...state.map(x => +x.id))+1).toString() }]
     }),
     on(remove, (state, action) => state.filter(x => x.id != action.id)),
     on(update, (state, action) =>

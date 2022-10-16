@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { SongModel } from './models/song';
-import { create, remove, update } from './state/songs.action';
+import { SongModel } from '../models/song';
+import { create, remove, update } from '../state/songs.action';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SongsStateService {
   songDatabase$: Observable<SongModel[]>;
 
