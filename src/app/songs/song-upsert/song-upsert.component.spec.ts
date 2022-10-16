@@ -21,7 +21,7 @@ describe('SongUpsertComponent', () => {
     component.song = {
       id: "1",
       artist: 'test artist',
-      year: "2020",
+      year: 2020,
       title: 'test title'
     }
     fixture.detectChanges();
