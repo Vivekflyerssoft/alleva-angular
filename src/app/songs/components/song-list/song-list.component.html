@@ -6,11 +6,11 @@
         <th>Year</th>
         <th></th>
     </tr>
-    <tr *ngFor="let song of songs; index as i;">
+    <tr class="table_row" *ngFor="let song of songs; index as i;">
         <th>{{i + 1}}</th>
-        <td>{{song.artist}}</td>
-        <td>{{song.title}}</td>
-        <td>{{song.year}}</td>
+        <td class="artist">{{song.artist}}</td>
+        <td class="title">{{song.title}}</td>
+        <td class="year">{{song.year}}</td>
         <td class="row">
             <button class="col-md-5 btn btn-danger btn-sm" (click)="remove(song)">REMOVE</button>
             <div class="col-md-1"></div>

@@ -3,7 +3,7 @@
         <h2 class="col-md-4 mx-auto">ALLEVA PLAYLIST</h2>
     </div>
     <div class="row">
-        <button class="col-md-1 btn btn-sm btn-success" *ngIf="!isCreate && !isUpdate"
+        <button id="create_song_btn" class="col-md-1 btn btn-sm btn-success" *ngIf="!isCreate && !isUpdate"
             (click)="showCreateSong()">CREATE</button>
     </div>
     <div class="row">

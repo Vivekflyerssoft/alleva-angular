@@ -1,7 +1,7 @@
-<form class="col-md-5 mx-auto" [formGroup]="form" (ngSubmit)="saveSong()">
+<form id="upsert_form" class="col-md-5 mx-auto" [formGroup]="form" (ngSubmit)="saveSong()">
     <div class="form-group">
         <label for="artist">Artist:</label><br>
-        <input class="form-control" type="text" name="artist" formControlName="artist">
+        <input id="artist" class="form-control" type="text" name="artist" formControlName="artist">
         <span class="text-danger" *ngIf="form.get('artist')?.touched && form.get('artist')?.errors">
             Artist is required
         </span>
@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label for="title">Title:</label><br>
-        <input class="form-control" type="text" name="title" formControlName="title">
+        <input id="title" class="form-control" type="text" name="title" formControlName="title">
         <span class="text-danger" *ngIf="form.get('title')?.touched && form.get('title')?.errors">
             Title is required
         </span>
@@ -17,14 +17,14 @@
 
     <div class="form-group">
         <label for="year">Year:</label><br>
-        <input class="form-control" type="number" name="year" formControlName="year">
+        <input id="year" class="form-control" type="number" name="year" formControlName="year">
         <span class="text-danger" *ngIf="form.get('year')?.touched && form.get('year')?.errors">
             Year is required (1900 - current year)
         </span>
     </div>
 
     <div class="row">
-        <button class="col-md-4 btn btn-sm" type="button" (click)="cancelForm()">Cancel</button>
+        <button id="cancel" class="col-md-4 btn btn-sm" type="button" (click)="cancelForm()">Cancel</button>
         <button type="submit" class="col-md-4 btn btn-sm btn-success" [disabled]="!enableSubmit">Submit</button>
     </div>
 </form>
